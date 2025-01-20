@@ -44,6 +44,11 @@ frappe.make_page = function (double_column, page_name) {
 	frappe.ui.make_app_page({
 		parent: page,
 		single_column: !double_column,
+<<<<<<< HEAD
+=======
+		sidebar_position: sidebar_position,
+		disable_sidebar_toggle: !sidebar_position,
+>>>>>>> ec57061e63 (refactor: hide sidebar (#29061))
 	});
 
 	frappe.container.change_to(page_name);
