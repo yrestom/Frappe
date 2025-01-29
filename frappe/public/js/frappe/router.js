@@ -176,9 +176,6 @@ frappe.router = {
 		// /admin/user/user-001 = ["Form", "User", "user-001"]
 		// /admin/event/view/calendar/default = ["List", "Event", "Calendar", "Default"]
 
-		if (route[0] === "admin") {
-			route = route.slice(1); // Remove "admin" prefix
-		}
 
 		if (frappe.workspaces[route[0]]) {
 			// public workspace
@@ -524,6 +521,7 @@ frappe.router = {
 	strip_prefix(route) {
 		if (route.substr(0, 1) == "/") route = route.substr(1); // for /admin/sub
 		if (route == "admin") route = route.substr(6); // for admin
+		if (route.startsWith("admin/")) route = route.substr(6); // for desk/sub
 		if (route.startsWith("admin/")) route = route.substr(6); // for desk/sub
 		if (route.substr(0, 1) == "/") route = route.substr(1);
 		if (route.substr(0, 1) == "#") route = route.substr(1);
