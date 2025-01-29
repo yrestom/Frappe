@@ -45,6 +45,6 @@ frappe.ui.form.on("Energy Point Log", {
 		let dn = frm.doc.reference_name;
 		frm.fields_dict.reference_name.$input_wrapper
 			.find(".control-value")
-			.wrapInner(`<a href='/app/${frappe.router.slug(dt)}/${dn}'></a>`);
+			.wrapInner(`<a href='/admin/${frappe.router.slug(dt)}/${dn}'></a>`);
 	},
 });

@@ -1,7 +1,7 @@
 context("Control Barcode", () => {
 	beforeEach(() => {
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 	});
 
 	function get_dialog_with_barcode() {

@@ -2317,7 +2317,7 @@ def get_desk_link(doctype, name):
 	meta = get_meta(doctype)
 	title = get_value(doctype, name, meta.get_title_field())
 
-	html = '<a href="/app/Form/{doctype}/{name}" style="font-weight: bold;">{doctype_local} {title_local}</a>'
+	html = '<a href="/admin/Form/{doctype}/{name}" style="font-weight: bold;">{doctype_local} {title_local}</a>'
 	return html.format(doctype=doctype, name=name, doctype_local=_(doctype), title_local=_(title))
 
 

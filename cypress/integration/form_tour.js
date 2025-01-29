@@ -1,7 +1,7 @@
 context.skip("Form Tour", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app");
+		cy.visit("/admin");
 		return cy
 			.window()
 			.its("frappe")
@@ -11,11 +11,11 @@ context.skip("Form Tour", () => {
 	});
 
 	const open_test_form_tour = () => {
-		cy.visit("/app/form-tour/Test Form Tour");
+		cy.visit("/admin/form-tour/Test Form Tour");
 		cy.findByRole("button", { name: "Show Tour" }).should("be.visible").as("show_tour");
 		cy.get("@show_tour").click();
 		cy.wait(500);
-		cy.url().should("include", "/app/contact");
+		cy.url().should("include", "/admin/contact");
 	};
 
 	it("jump to a form tour", open_test_form_tour);

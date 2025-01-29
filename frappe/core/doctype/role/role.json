@@ -53,7 +53,7 @@
    "options": "Domain"
   },
   {
-   "description": "Route: Example \"/app\"",
+   "description": "Route: Example \"/admin\"",
    "fieldname": "home_page",
    "fieldtype": "Data",
    "label": "Home Page"

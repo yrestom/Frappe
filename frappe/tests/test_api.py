@@ -456,12 +456,12 @@ class TestResponse(FrappeAPITestCase):
 
 	def test_login_redirects(self):
 		expected_redirects = {
-			"/app/user": "/app/user",
-			"/app/user?enabled=1": "/app/user?enabled=1",
-			"http://example.com": "/app",  # No external redirect
-			"https://google.com": "/app",
-			"http://localhost:8000": "/app",
-			"http://localhost/app": "http://localhost/app",
+			"/admin/user": "/admin/user",
+			"/admin/user?enabled=1": "/admin/user?enabled=1",
+			"http://example.com": "/admin",  # No external redirect
+			"https://google.com": "/admin",
+			"http://localhost:8000": "/admin",
+			"http://localhost/admin": "http://localhost/admin",
 		}
 		for redirect, expected_redirect in expected_redirects.items():
 			response = self.get(f"/login?{urlencode({'redirect-to':redirect})}", {"sid": self.sid})

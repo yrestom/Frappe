@@ -1182,7 +1182,7 @@ def browse(context, site, user=None):
 			frappe.local.cookie_manager = CookieManager()
 			frappe.local.login_manager = LoginManager()
 			frappe.local.login_manager.login_as(user)
-			sid = f"/app?sid={frappe.session.sid}"
+			sid = f"/admin?sid={frappe.session.sid}"
 		else:
 			click.echo("Please enable developer mode to login as a user")
 

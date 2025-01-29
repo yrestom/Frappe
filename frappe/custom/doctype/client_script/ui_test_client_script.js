@@ -1,7 +1,7 @@
 context("Client Script", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app");
+		cy.visit("/admin");
 	});
 
 	it("should run form script in doctype form", () => {
@@ -16,7 +16,7 @@ context("Client Script", () => {
 			},
 			true
 		);
-		cy.visit("/app/todo/new", {
+		cy.visit("/admin/todo/new", {
 			onBeforeLoad(win) {
 				cy.spy(win.console, "log").as("consoleLog");
 			},
@@ -36,7 +36,7 @@ context("Client Script", () => {
 			},
 			true
 		);
-		cy.visit("/app/todo", {
+		cy.visit("/admin/todo", {
 			onBeforeLoad(win) {
 				cy.spy(win.console, "log").as("consoleLog");
 			},
@@ -56,7 +56,7 @@ context("Client Script", () => {
 			},
 			true
 		);
-		cy.visit("/app/todo", {
+		cy.visit("/admin/todo", {
 			onBeforeLoad(win) {
 				cy.spy(win.console, "log").as("consoleLog");
 			},
@@ -87,7 +87,7 @@ context("Client Script", () => {
 			},
 			true
 		);
-		cy.visit("/app/todo/new", {
+		cy.visit("/admin/todo/new", {
 			onBeforeLoad(win) {
 				cy.spy(win.console, "log").as("consoleLog");
 			},

@@ -359,7 +359,7 @@ class Leaderboard {
 			})
 		);
 
-		const link = `/app/${frappe.router.slug(this.options.selected_doctype)}/${item.name}`;
+		const link = `/admin/${frappe.router.slug(this.options.selected_doctype)}/${item.name}`;
 		const name_html = item.formatted_name
 			? `<span class="text-muted ellipsis list-id">${item.formatted_name}</span>`
 			: `<a class="grey list-id ellipsis" href="${link}"> ${item.name} </a>`;

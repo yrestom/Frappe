@@ -5,10 +5,10 @@ context("Workspace 2.0", () => {
 	});
 
 	it("Navigate to page from sidebar", () => {
-		cy.visit("/app/build");
+		cy.visit("/admin/build");
 		cy.get(".codex-editor__redactor .ce-block");
 		cy.get('.sidebar-item-container[item-name="Website"]').first().click();
-		cy.location("pathname").should("eq", "/app/website");
+		cy.location("pathname").should("eq", "/admin/website");
 	});
 
 	it("Create Private Page", () => {

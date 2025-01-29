@@ -2,7 +2,7 @@ context("Awesome Bar", () => {
 	before(() => {
 		cy.visit("/login");
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 	});
 
 	beforeEach(() => {
@@ -17,7 +17,7 @@ context("Awesome Bar", () => {
 		cy.get(".awesomplete").findByRole("listbox").should("be.visible");
 		cy.get("@awesome_bar").type("{enter}");
 		cy.get(".title-text").should("contain", "To Do");
-		cy.location("pathname").should("eq", "/app/todo");
+		cy.location("pathname").should("eq", "/admin/todo");
 	});
 
 	it("navigates to new form", () => {

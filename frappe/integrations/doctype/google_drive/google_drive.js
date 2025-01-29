@@ -6,7 +6,7 @@ frappe.ui.form.on("Google Drive", {
 		if (!frm.doc.enable) {
 			frm.dashboard.set_headline(
 				__("To use Google Drive, enable {0}.", [
-					`<a href='/app/google-settings'>${__("Google Settings")}</a>`,
+					`<a href='/admin/google-settings'>${__("Google Settings")}</a>`,
 				])
 			);
 		}

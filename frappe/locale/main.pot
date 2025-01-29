@@ -11522,7 +11522,7 @@ msgstr ""
 
 #. Description of the 'Content' (Text Editor) field in DocType 'Note'
 #: frappe/desk/doctype/note/note.json
-msgid "Help: To link to another record in the system, use \"/app/note/[Note Name]\" as the Link URL. (don't use \"http://\")"
+msgid "Help: To link to another record in the system, use \"/admin/note/[Note Name]\" as the Link URL. (don't use \"http://\")"
 msgstr ""
 
 #. Label of a Int field in DocType 'Help Article'
@@ -13044,7 +13044,7 @@ msgstr ""
 msgid "Invalid redirect regex in row #{}: {}"
 msgstr ""
 
-#: frappe/app.py:309
+#: frappe/admin.py:309
 msgid "Invalid request arguments"
 msgstr ""
 
@@ -14536,7 +14536,7 @@ msgstr ""
 msgid "Log Settings"
 msgstr ""
 
-#: frappe/www/app.py:23
+#: frappe/www/admin.py:23
 msgid "Log in to access this page."
 msgstr ""
 
@@ -14669,7 +14669,7 @@ msgid "Login with {0}"
 msgstr ""
 
 #. Option for the 'Operation' (Select) field in DocType 'Activity Log'
-#: frappe/core/doctype/activity_log/activity_log.json frappe/www/apps.html:59
+#: frappe/core/doctype/activity_log/activity_log.json frappe/www/admins.html:59
 msgid "Logout"
 msgstr ""
 
@@ -16691,7 +16691,7 @@ msgstr ""
 msgid "Not Equals"
 msgstr ""
 
-#: frappe/app.py:366 frappe/www/404.html:3
+#: frappe/admin.py:366 frappe/www/404.html:3
 msgid "Not Found"
 msgstr ""
 
@@ -16712,7 +16712,7 @@ msgstr ""
 msgid "Not Linked to any record"
 msgstr ""
 
-#: frappe/__init__.py:940 frappe/app.py:357 frappe/desk/calendar.py:26
+#: frappe/__init__.py:940 frappe/admin.py:357 frappe/desk/calendar.py:26
 #: frappe/desk/treeview.py:19 frappe/geo/utils.py:97
 #: frappe/public/js/frappe/web_form/webform_script.js:15
 #: frappe/website/doctype/web_form/web_form.py:602
@@ -21465,7 +21465,7 @@ msgstr ""
 
 #. Description of the 'Home Page' (Data) field in DocType 'Role'
 #: frappe/core/doctype/role/role.json
-msgid "Route: Example \"/app\""
+msgid "Route: Example \"/admin\""
 msgstr ""
 
 #: frappe/model/base_document.py:737 frappe/model/base_document.py:778
@@ -22449,7 +22449,7 @@ msgstr ""
 msgid "Select an Image"
 msgstr ""
 
-#: frappe/www/apps.html:10
+#: frappe/www/admins.html:10
 msgid "Select an app to continue"
 msgstr ""
 
@@ -22894,7 +22894,7 @@ msgstr ""
 msgid "Session Defaults Saved"
 msgstr ""
 
-#: frappe/app.py:348
+#: frappe/admin.py:348
 msgid "Session Expired"
 msgstr ""
 
@@ -25420,7 +25420,7 @@ msgstr ""
 msgid "The reset password link has either been used before or is invalid"
 msgstr ""
 
-#: frappe/app.py:367 frappe/public/js/frappe/request.js:147
+#: frappe/admin.py:367 frappe/public/js/frappe/request.js:147
 msgid "The resource you are looking for is not available"
 msgstr ""
 
@@ -26217,7 +26217,7 @@ msgstr ""
 #. Description of the 'Enable Google indexing' (Check) field in DocType
 #. 'Website Settings'
 #: frappe/website/doctype/website_settings/website_settings.json
-msgid "To use Google Indexing, enable <a href=\"/app/google-settings\">Google Settings</a>."
+msgid "To use Google Indexing, enable <a href=\"/admin/google-settings\">Google Settings</a>."
 msgstr ""
 
 #. Description of the 'Slack Channel' (Link) field in DocType 'Notification'
@@ -28961,7 +28961,7 @@ msgstr ""
 msgid "You are not permitted to access this page without login."
 msgstr ""
 
-#: frappe/www/app.py:26
+#: frappe/www/admin.py:26
 msgid "You are not permitted to access this page."
 msgstr ""
 
@@ -29136,7 +29136,7 @@ msgstr ""
 msgid "You do not have enough permissions to access this resource. Please contact your manager to get access."
 msgstr ""
 
-#: frappe/app.py:358
+#: frappe/admin.py:358
 msgid "You do not have enough permissions to complete the action"
 msgstr ""
 
@@ -29428,7 +29428,7 @@ msgstr ""
 msgid "Your query has been received. We will reply back shortly. If you have any additional information, please reply to this mail."
 msgstr ""
 
-#: frappe/app.py:349
+#: frappe/admin.py:349
 msgid "Your session has expired, please login again to continue."
 msgstr ""
 

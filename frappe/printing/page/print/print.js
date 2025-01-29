@@ -114,7 +114,7 @@ frappe.ui.form.PrintView = class {
 			description =
 				"<div class='form-message yellow p-3 mt-3'>" +
 				__("Footer might not be visible as {0} option is disabled</div>", [
-					`<a href="/app/print-settings/Print Settings">${__(
+					`<a href="/admin/print-settings/Print Settings">${__(
 						"Repeat Header and Footer"
 					)}</a>`,
 				]);
@@ -187,13 +187,13 @@ frappe.ui.form.PrintView = class {
 		// print designer link
 		if (Object.keys(frappe.boot.versions).includes("print_designer")) {
 			this.page.add_inner_message(`
-			<a style="line-height: 2.4" href="/app/print-designer?doctype=${this.frm.doctype}">
+			<a style="line-height: 2.4" href="/admin/print-designer?doctype=${this.frm.doctype}">
 				${__("Try the new Print Designer")}
 			</a>
 			`);
 		} else {
 			this.page.add_inner_message(`
-			<a style="line-height: 2.4" href="https://frappecloud.com/marketplace/apps/print_designer?utm_source=framework-desk&utm_medium=print-view&utm_campaign=try-link">
+			<a style="line-height: 2.4" href="https://frappecloud.com/marketplace/admins/print_designer?utm_source=framework-desk&utm_medium=print-view&utm_campaign=try-link">
 				${__("Try the new Print Designer")}
 			</a>
 			`);

@@ -1,7 +1,7 @@
 context("List View", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 		return cy
 			.window()
 			.its("frappe")

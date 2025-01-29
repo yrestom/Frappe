@@ -31,7 +31,7 @@ def get_context(context):
 			if frappe.session.data.user_type == "Website User":
 				redirect_to = get_default_path() or get_home_page()
 			else:
-				redirect_to = get_default_path() or "/app"
+				redirect_to = get_default_path() or "/admin"
 
 		if redirect_to != "login":
 			frappe.local.flags.redirect_location = redirect_to
@@ -192,7 +192,7 @@ def sanitize_redirect(redirect: str | None) -> str | None:
 
 	Allowed redirects:
 	- Same host e.g. https://frappe.localhost/path
-	- Just path e.g. /app
+	- Just path e.g. /admin
 	"""
 	if not redirect:
 		return redirect

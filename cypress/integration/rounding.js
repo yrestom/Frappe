@@ -1,7 +1,7 @@
 context("Rounding behaviour", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app/");
+		cy.visit("/admin/");
 	});
 
 	it("Commercial Rounding", () => {

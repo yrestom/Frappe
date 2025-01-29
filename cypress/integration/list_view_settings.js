@@ -1,17 +1,17 @@
 context("List View Settings", () => {
 	beforeEach(() => {
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 	});
 	it("Default settings", () => {
-		cy.visit("/app/List/DocType/List");
+		cy.visit("/admin/List/DocType/List");
 		cy.clear_filters();
 		cy.get(".list-count").should("contain", "20 of");
 		cy.get(".list-stats").should("contain", "Tags");
 	});
 	it("disable count and sidebar stats then verify", () => {
 		cy.wait(300);
-		cy.visit("/app/List/DocType/List");
+		cy.visit("/admin/List/DocType/List");
 		cy.clear_filters();
 		cy.wait(300);
 		cy.get(".list-count").should("contain", "20 of");

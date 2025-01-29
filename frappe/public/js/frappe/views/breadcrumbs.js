@@ -114,7 +114,7 @@ frappe.breadcrumbs = {
 		}
 
 		this.append_breadcrumb_element(
-			`/app/${frappe.router.slug(breadcrumbs.workspace)}`,
+			`/admin/${frappe.router.slug(breadcrumbs.workspace)}`,
 			__(breadcrumbs.workspace)
 		);
 	},
@@ -180,7 +180,7 @@ frappe.breadcrumbs = {
 			} else {
 				route = doctype_route;
 			}
-			this.append_breadcrumb_element(`/app/${route}`, __(doctype));
+			this.append_breadcrumb_element(`/admin/${route}`, __(doctype));
 		}
 	},
 
@@ -193,7 +193,7 @@ frappe.breadcrumbs = {
 		} else {
 			docname_title = __(docname);
 		}
-		let form_route = `/app/${frappe.router.slug(doctype)}/${encodeURIComponent(docname)}`;
+		let form_route = `/admin/${frappe.router.slug(doctype)}/${encodeURIComponent(docname)}`;
 		this.append_breadcrumb_element(form_route, docname_title);
 
 		if (view === "form") {
@@ -210,7 +210,7 @@ frappe.breadcrumbs = {
 	set_dashboard_breadcrumb(breadcrumbs) {
 		const doctype = breadcrumbs.doctype;
 		const docname = frappe.get_route()[1];
-		let dashboard_route = `/app/${frappe.router.slug(doctype)}/${docname}`;
+		let dashboard_route = `/admin/${frappe.router.slug(doctype)}/${docname}`;
 		$(`<li><a href="${dashboard_route}">${__(docname)}</a></li>`).appendTo(this.$breadcrumbs);
 	},
 

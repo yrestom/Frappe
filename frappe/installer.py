@@ -245,7 +245,7 @@ def parse_app_name(name: str) -> str:
 	"""parse repo name from name
 
 	__setup_details_from_git()
-	ref -> https://github.com/frappe/bench/blob/develop/bench/app.py#L114
+	ref -> https://github.com/frappe/bench/blob/develop/bench/admin.py#L114
 
 
 	:param name: git tag

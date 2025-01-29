@@ -1,7 +1,7 @@
 context("Number Card", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 	});
 
 	it("Check filter populate for child table doctype", () => {

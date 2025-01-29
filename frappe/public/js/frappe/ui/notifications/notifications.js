@@ -218,7 +218,7 @@ class NotificationsView extends BaseNotificationsView {
 		if (this.container.find(".activity-status")) {
 			this.container.find(".activity-status").replaceWith(
 				`<a class="recent-item text-center text-muted"
-					href="/app/List/Notification Log">
+					href="/admin/List/Notification Log">
 					<div class="full-log-btn">${__("View Full Log")}</div>
 				</a>`
 			);
@@ -307,7 +307,7 @@ class NotificationsView extends BaseNotificationsView {
 					this.container.append(this.get_dropdown_item_html(notification_log));
 				});
 				this.container.append(`<a class="list-footer"
-					href="/app/List/Notification Log">
+					href="/admin/List/Notification Log">
 						<div class="full-log-btn">${__("See all Activity")}</div>
 					</a>`);
 			} else {
@@ -421,7 +421,7 @@ class EventsView extends BaseNotificationsView {
 					location = `, ${event.location}`;
 				}
 
-				return `<a class="recent-item event" href="/app/event/${event.name}">
+				return `<a class="recent-item event" href="/admin/event/${event.name}">
 					<div class="event-border" style="border-color: ${event.color}"></div>
 					<div class="event-item">
 						<div class="event-subject">${event.subject}</div>

@@ -1673,29 +1673,29 @@ def get_link_to_report(
 
 
 def get_absolute_url(doctype: str, name: str) -> str:
-	return f"/app/{quoted(slug(doctype))}/{quoted(name)}"
+	return f"/admin/{quoted(slug(doctype))}/{quoted(name)}"
 
 
 def get_url_to_form(doctype: str, name: str) -> str:
-	return get_url(uri=f"/app/{quoted(slug(doctype))}/{quoted(name)}")
+	return get_url(uri=f"/admin/{quoted(slug(doctype))}/{quoted(name)}")
 
 
 def get_url_to_list(doctype: str) -> str:
-	return get_url(uri=f"/app/{quoted(slug(doctype))}")
+	return get_url(uri=f"/admin/{quoted(slug(doctype))}")
 
 
 def get_url_to_report(name, report_type: str | None = None, doctype: str | None = None) -> str:
 	if report_type == "Report Builder":
-		return get_url(uri=f"/app/{quoted(slug(doctype))}/view/report/{quoted(name)}")
+		return get_url(uri=f"/admin/{quoted(slug(doctype))}/view/report/{quoted(name)}")
 	else:
-		return get_url(uri=f"/app/query-report/{quoted(name)}")
+		return get_url(uri=f"/admin/query-report/{quoted(name)}")
 
 
 def get_url_to_report_with_filters(name, filters, report_type=None, doctype=None):
 	if report_type == "Report Builder":
-		return get_url(uri=f"/app/{quoted(slug(doctype))}/view/report?{filters}")
+		return get_url(uri=f"/admin/{quoted(slug(doctype))}/view/report?{filters}")
 
-	return get_url(uri=f"/app/query-report/{quoted(name)}?{filters}")
+	return get_url(uri=f"/admin/query-report/{quoted(name)}?{filters}")
 
 
 def sql_like(value: str, pattern: str) -> bool:

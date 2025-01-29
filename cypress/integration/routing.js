@@ -1,4 +1,4 @@
-const list_view = "/app/todo";
+const list_view = "/admin/todo";
 
 // test round trip with filter types
 

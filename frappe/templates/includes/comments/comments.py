@@ -50,7 +50,7 @@ def add_comment(comment, comment_email, comment_by, reference_doctype, reference
 	if doc.get("route"):
 		url = f"{frappe.utils.get_request_site_address()}/{doc.route}#{comment.name}"
 	else:
-		url = f"{frappe.utils.get_request_site_address()}/app/{scrub(doc.doctype)}/{doc.name}#comment-{comment.name}"
+		url = f"{frappe.utils.get_request_site_address()}/admin/{scrub(doc.doctype)}/{doc.name}#comment-{comment.name}"
 
 	content = comment.content + "<p><a href='{}' style='font-size: 80%'>{}</a></p>".format(
 		url, _("View Comment")

@@ -145,7 +145,7 @@ class TestWebsite(FrappeTestCase):
 
 	def test_app(self):
 		frappe.set_user("Administrator")
-		set_request(method="GET", path="/app")
+		set_request(method="GET", path="/admin")
 		response = get_response()
 		self.assertEqual(response.status_code, 200)
 
@@ -401,8 +401,8 @@ class TestWebsite(FrappeTestCase):
 			frappe.conf.update({"app_include_js": ["test_app_include_via_site_config.js"]})
 			frappe.conf.update({"app_include_css": ["test_app_include_via_site_config.css"]})
 
-			set_request(method="GET", path="/app")
-			content = get_response_content("/app")
+			set_request(method="GET", path="/admin")
+			content = get_response_content("/admin")
 			self.assertIn('<script type="text/javascript" src="/test_app_include.js"></script>', content)
 			self.assertIn(
 				'<script type="text/javascript" src="/test_app_include_via_site_config.js"></script>', content

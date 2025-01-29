@@ -40,7 +40,7 @@ describe(
 	() => {
 		before(() => {
 			cy.login();
-			cy.visit(`/app/note/new`);
+			cy.visit(`/admin/note/new`);
 		});
 
 		test_button_names.forEach((button_name) => {

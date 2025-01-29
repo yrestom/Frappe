@@ -363,7 +363,7 @@ def dropbox_auth_finish():
 	set_dropbox_token(token.access_token, token.refresh_token)
 
 	frappe.local.response["type"] = "redirect"
-	frappe.local.response["location"] = "/app/dropbox-settings"
+	frappe.local.response["location"] = "/admin/dropbox-settings"
 
 
 def set_dropbox_token(access_token, refresh_token=None):

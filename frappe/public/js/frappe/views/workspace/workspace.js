@@ -150,7 +150,7 @@ frappe.views.Workspace = class Workspace {
 			>
 				<div class="desk-sidebar-item standard-sidebar-item ${item.selected ? "selected" : ""}">
 					<a
-						href="/app/${
+						href="/admin/${
 							item.public
 								? frappe.router.slug(item.title)
 								: "private/" + frappe.router.slug(item.title)

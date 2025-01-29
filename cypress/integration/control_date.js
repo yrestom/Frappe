@@ -1,7 +1,7 @@
 context("Date Control", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app");
+		cy.visit("/admin");
 	});
 
 	function get_dialog(date_field_options) {

@@ -342,7 +342,7 @@ frappe.PermissionEngine = class PermissionEngine {
 					},
 					callback: function (r) {
 						r.message = $.map(r.message, function (p) {
-							return $.format('<a href="/app/user/{0}">{1}</a>', [p, p]);
+							return $.format('<a href="/admin/user/{0}">{1}</a>', [p, p]);
 						});
 						frappe.msgprint(
 							__("Users with role {0}:", [__(role)]) +

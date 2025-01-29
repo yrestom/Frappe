@@ -64,7 +64,7 @@ $("body").on("click", "a", function (e) {
 	}
 
 	if (frappe.router.is_app_route(target_element.pathname)) {
-		// target has "/app, this is a v2 style route.
+		// target has "/admin, this is a v2 style route.
 		if (target_element.search) {
 			frappe.route_options = {};
 			let params = new URLSearchParams(target_element.search);
@@ -112,11 +112,11 @@ frappe.router = {
 
 	is_app_route(path) {
 		if (!path) return;
-		// desk paths must begin with /app or doctype route
+		// desk paths must begin with /admin or doctype route
 		if (path.substr(0, 1) === "/") path = path.substr(1);
 		path = path.split("/");
 		if (path[0]) {
-			return path[0] === "app";
+			return path[0] === "admin";
 		}
 	},
 
@@ -464,7 +464,7 @@ frappe.router = {
 		}).join("/");
 
 		if (path_string) {
-			return "/app/" + path_string;
+			return "/admin/" + path_string;
 		}
 
 		// Resolution order
@@ -483,13 +483,13 @@ frappe.router = {
 
 		if (workspace) {
 			return (
-				"/app/" +
+				"/admin/" +
 				(workspace.public ? "" : "private/") +
 				frappe.router.slug(workspace.title)
 			);
 		}
 
-		return "/app";
+		return "/admin";
 	},
 
 	push_state(url) {
@@ -519,9 +519,9 @@ frappe.router = {
 	},
 
 	strip_prefix(route) {
-		if (route.substr(0, 1) == "/") route = route.substr(1); // for /app/sub
-		if (route == "app") route = route.substr(4); // for app
-		if (route.startsWith("app/")) route = route.substr(4); // for desk/sub
+		if (route.substr(0, 1) == "/") route = route.substr(1); // for /admin/sub
+		if (route == "admin") route = route.substr(4); // for app
+		if (route.startsWith("admin/")) route = route.substr(4); // for desk/sub
 		if (route.substr(0, 1) == "/") route = route.substr(1);
 		if (route.substr(0, 1) == "#") route = route.substr(1);
 		if (route.substr(0, 1) == "!") route = route.substr(1);

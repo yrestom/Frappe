@@ -1,7 +1,7 @@
 context("Workspace Blocks", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app");
+		cy.visit("/admin");
 		return cy
 			.window()
 			.its("frappe")
@@ -16,7 +16,7 @@ context("Workspace Blocks", () => {
 			url: "api/method/frappe.desk.doctype.workspace.workspace.new_page",
 		}).as("new_page");
 
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 		cy.get(".codex-editor__redactor .ce-block");
 		cy.get(".btn-new-workspace").click();
 		cy.fill_field("title", "Test Block Page", "Data");

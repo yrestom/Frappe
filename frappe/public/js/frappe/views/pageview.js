@@ -26,6 +26,7 @@ frappe.views.pageview = {
 			callback();
 		} else if (name) {
 			// get fresh
+			console.log("get fresh", name);
 			return frappe.call({
 				method: "frappe.desk.desk_page.getpage",
 				args: { name: name },
@@ -65,6 +66,8 @@ frappe.views.Page = class Page {
 	constructor(name) {
 		this.name = name;
 		var me = this;
+		console.log("Page constructor", name);
+		console.log("window.page_name", window.page_name);
 
 		// web home page
 		if (name == window.page_name) {
@@ -144,7 +147,7 @@ frappe.show_message_page = function (opts) {
 			<div class="text-center message-page-content">\
 				%(img)s\
 				<p class="lead">%(message)s</p>\
-				<a class="btn btn-default btn-sm btn-home" href="/app">%(home)s</a>\
+				<a class="btn btn-default btn-sm btn-home" href="/admin">%(home)s</a>\
 			</div>\
 		</div>',
 			{

@@ -337,7 +337,7 @@ class TestCustomizeForm(FrappeTestCase):
 		self.assertFalse([d.name for d in (user_group.links or []) if d.link_doctype == "User Group Member"])
 
 	def test_custom_action(self):
-		test_route = "/app/List/DocType"
+		test_route = "/admin/List/DocType"
 
 		# create a dummy action (route)
 		d = self.get_customize_form("Event")

@@ -75,7 +75,7 @@ def authorize_access(reauthorize=False, code=None):
 			frappe.db.set_single_value("Google Drive", "backup_folder_id", "")
 		return oauth_obj.get_authentication_url(
 			{
-				"redirect": f"/app/Form/{quote('Google Drive')}",
+				"redirect": f"/admin/Form/{quote('Google Drive')}",
 			},
 		)
 

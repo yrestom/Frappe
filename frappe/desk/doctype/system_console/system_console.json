@@ -1,7 +1,7 @@
 {
  "actions": [
   {
-   "action": "/app/console-log",
+   "action": "/admin/console-log",
    "action_type": "Route",
    "label": "Logs"
   },

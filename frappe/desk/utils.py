@@ -6,7 +6,7 @@ import frappe
 
 def validate_route_conflict(doctype, name):
 	"""
-	Raises exception if name clashes with routes from other documents for /app routing
+	Raises exception if name clashes with routes from other documents for /admin routing
 	"""
 
 	if frappe.flags.in_migrate:

@@ -150,7 +150,7 @@ class TestPerformance(FrappeTestCase):
 		)
 
 	def test_homepage_resolver(self):
-		paths = ["/", "/app"]
+		paths = ["/", "/admin"]
 		for path in paths:
 			PathResolver(path).resolve()
 			with self.assertQueryCount(1):

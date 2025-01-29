@@ -13,7 +13,7 @@ Object.assign(frappe.energy_points, {
 		const separator = `<span>&nbsp;-&nbsp;</span>`;
 		return `<span>
   			<!--${this.get_points(log.points)}&nbsp;-->
-  			<a href="/app/energy-point-log/${log.name}">${this.get_form_log_message(log)}</a>
+  			<a href="/admin/energy-point-log/${log.name}">${this.get_form_log_message(log)}</a>
   			${log.reason ? separator + log.reason : ""}
   		</span>`;
 	},

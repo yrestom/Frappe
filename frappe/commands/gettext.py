@@ -80,7 +80,7 @@ def create_po_file(context, locale: str, app: str | None = None):
 
 
 @click.command("update-csv-from-po")
-@click.argument("app", nargs=1)
+@click.argument("admin", nargs=1)
 @click.argument("locale", nargs=1)
 def update_csv_from_po(app: str, locale: str) -> None:
 	"""Add missing translations from PO file to CSV file.

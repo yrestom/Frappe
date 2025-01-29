@@ -1,5 +1,5 @@
 const verify_attachment_visibility = (document, is_private) => {
-	cy.visit(`/app/${document}`);
+	cy.visit(`/admin/${document}`);
 
 	const assertion = is_private ? "be.checked" : "not.be.checked";
 	cy.get(".add-attachment-btn").click();
@@ -38,7 +38,7 @@ context("Sidebar", () => {
 	before(() => {
 		cy.visit("/");
 		cy.login();
-		cy.visit("/app");
+		cy.visit("/admin");
 		return cy
 			.window()
 			.its("frappe")
@@ -60,7 +60,7 @@ context("Sidebar", () => {
 		cy.call("frappe.tests.ui_test_helpers.create_todo_with_attachment_limit", {
 			description: "Sidebar Attachment Access Test ToDo",
 		}).then((todo) => {
-			cy.visit(`/app/todo/${todo.message.name}`);
+			cy.visit(`/admin/todo/${todo.message.name}`);
 
 			attach_file("cypress/fixtures/sample_image.jpg");
 			cy.get(".explore-link").should("be.visible");
@@ -87,19 +87,19 @@ context("Sidebar", () => {
 			description: "Sidebar Attachment ToDo",
 		}).then((todo) => {
 			let todo_name = todo.message.name;
-			cy.visit("/app/todo");
+			cy.visit("/admin/todo");
 			cy.click_sidebar_button("Assigned To");
 
 			//To check if no filter is available in "Assigned To" dropdown
 			cy.get(".empty-state").should("contain", "No filters found");
 
 			//Assigning a doctype to a user
-			cy.visit(`/app/todo/${todo_name}`);
+			cy.visit(`/admin/todo/${todo_name}`);
 			cy.get(".add-assignment-btn").click();
 			cy.get_field("assign_to_me", "Check").click();
 			cy.wait(1000);
 			cy.get(".modal-footer > .standard-actions > .btn-primary").click();
-			cy.visit("/app/todo");
+			cy.visit("/admin/todo");
 			cy.click_sidebar_button("Assigned To");
 
 			//To check if filter is added in "Assigned To" dropdown after assignment
@@ -132,11 +132,11 @@ context("Sidebar", () => {
 			cy.clear_filters();
 
 			//To remove the assignment
-			cy.visit(`/app/todo/${todo_name}`);
+			cy.visit(`/admin/todo/${todo_name}`);
 			cy.get(".assignments > .avatar-group > .avatar > .avatar-frame").click();
 			cy.get(".remove-btn").click({ force: true });
 			cy.hide_dialog();
-			cy.visit("/app/todo");
+			cy.visit("/admin/todo");
 			cy.click_sidebar_button("Assigned To");
 			cy.get(".empty-state").should("contain", "No filters found");
 		});

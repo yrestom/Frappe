@@ -17,7 +17,7 @@ const type_value = (value) => {
 context("Form", () => {
 	before(() => {
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 		return cy
 			.window()
 			.its("frappe")
@@ -28,11 +28,11 @@ context("Form", () => {
 
 	beforeEach(() => {
 		cy.login();
-		cy.visit("/app/website");
+		cy.visit("/admin/website");
 	});
 
 	it("create a new form", () => {
-		cy.visit("/app/todo/new");
+		cy.visit("/admin/todo/new");
 		cy.get_field("description", "Text Editor")
 			.type("this is a test todo", { force: true })
 			.wait(1000);
@@ -51,7 +51,7 @@ context("Form", () => {
 	});
 
 	it("navigates between documents with child table list filters applied", () => {
-		cy.visit("/app/contact");
+		cy.visit("/admin/contact");
 
 		cy.clear_filters();
 		cy.get('.standard-filter-section [data-fieldname="name"] input')
@@ -74,7 +74,7 @@ context("Form", () => {
 		cy.get("#page-Contact .page-head").findByTitle("Test Form Contact 3").should("exist");
 
 		// clear filters
-		cy.visit("/app/contact");
+		cy.visit("/admin/contact");
 		cy.clear_filters();
 	});
 
@@ -84,7 +84,7 @@ context("Form", () => {
 		let valid_email = "user@email.com";
 		let expectBackgroundColor = "rgb(255, 245, 245)";
 
-		cy.visit("/app/contact/new");
+		cy.visit("/admin/contact/new");
 		cy.get('.frappe-control[data-fieldname="email_ids"]').as("table");
 		cy.get("@table").find("button.grid-add-row").click();
 		cy.get("@table").find("button.grid-add-row").click();
@@ -117,7 +117,7 @@ context("Form", () => {
 	});
 
 	it("update docfield property using set_df_property in child table", () => {
-		cy.visit("/app/contact/Test Form Contact 1");
+		cy.visit("/admin/contact/Test Form Contact 1");
 		cy.window()
 			.its("cur_frm")
 			.then((frm) => {

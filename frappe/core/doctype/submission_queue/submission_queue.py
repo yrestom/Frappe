@@ -132,7 +132,7 @@ class SubmissionQueue(Document):
 				{
 					"message": message.format(
 						*message_replacements,
-						f"<a href='/app/{quote(doctype.lower().replace(' ', '-'))}/{quote(docname)}'><b>here</b></a>",
+						f"<a href='/admin/{quote(doctype.lower().replace(' ', '-'))}/{quote(docname)}'><b>here</b></a>",
 					),
 					"alert": True,
 					"indicator": "red" if submission_status == "Failed" else "green",
@@ -172,7 +172,7 @@ def queue_submission(doc: Document, action: str, alert: bool = True):
 	if alert:
 		frappe.msgprint(
 			_("Queued for Submission. You can track the progress over {0}.").format(
-				f"<a href='/app/submission-queue/{queue.name}'><b>here</b></a>"
+				f"<a href='admin/submission-queue/{queue.name}'><b>here</b></a>"
 			),
 			indicator="green",
 			alert=True,

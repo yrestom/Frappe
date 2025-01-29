@@ -16,7 +16,7 @@
 
 #### Javascript / CSS Builds
 
-1. `app_include_js` - include in "app"
+1. `app_include_js` - include in "admin"
 1. `app_include_css` - assets/frappe/css/splash.css
 
 1. `web_include_js` - assets/js/frappe-web.min.js

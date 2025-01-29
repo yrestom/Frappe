@@ -4,7 +4,7 @@
 // context('Datetime Field Validation', () => {
 // 	before(() => {
 // 		cy.login();
-// 		cy.visit('/app/communication');
+// 		cy.visit('/admin/communication');
 // 	});
 
 // 	it('datetime field form validation', () => {
@@ -12,7 +12,7 @@
 // 		cy.window().its('frappe').then(frappe => {
 // 			return frappe.xcall("frappe.tests.ui_test_helpers.create_communication_record");
 // 		}).then(doc => {
-// 			cy.visit(`/app/communication/${doc.name}`);
+// 			cy.visit(`/admin/communication/${doc.name}`);
 // 			cy.get('.indicator-pill').should('contain', 'Open').should('have.class', 'red');
 // 		});
 // 	});
