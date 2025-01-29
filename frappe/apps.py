@@ -42,7 +42,7 @@ def get_route(app, allowed_workspaces=None):
 	if not allowed_workspaces:
 		return "/admin"
 
-	route = app.get("route") if app and app.get("route") else "/admin"
+	route = app.get("route") if app and app.get("route") else "/apps"
 
 	# Check if user has access to default workspace, if not, pick first workspace user has access to
 	if route.startswith("/admin/"):
@@ -91,10 +91,10 @@ def get_default_path(apps=None):
 		return app.get("route") if app else None
 
 	if len(_apps) == 1:
-		return _apps[0].get("route") or "/admin"
+		return _apps[0].get("route") or "/apps"
 	elif is_desk_apps(_apps):
-		return "/admin"
-	return "/admin"
+		return "/apps"
+	return "/apps"
 
 
 @frappe.whitelist()

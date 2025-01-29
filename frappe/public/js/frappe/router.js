@@ -509,7 +509,7 @@ frappe.router = {
 		// supports both v1 and v2 routing
 		if (!route) {
 			route = window.location.pathname;
-			if (route.includes("app#")) {
+			if (route.includes("admin#")) {
 				// to support v1
 				route = window.location.hash;
 			}

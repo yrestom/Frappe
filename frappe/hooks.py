@@ -492,7 +492,7 @@ standard_navbar_items = [
 	{
 		"item_label": "Apps",
 		"item_type": "Route",
-		"route": "/admin",
+		"route": "/apps",
 		"is_standard": 1,
 	},
 	{
@@ -515,7 +515,7 @@ standard_navbar_items = [
 	{
 		"item_label": "Log out",
 		"item_type": "Action",
-		"action": "frappe.app.logout()",
+		"action": "frappe.admin.logout()",
 		"is_standard": 1,
 	},
 ]
