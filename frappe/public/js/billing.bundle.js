@@ -72,7 +72,7 @@ function showFCLoginDialog(email) {
 			</div>
 			<p class="text-danger" id="fc-login-error"></p>
 		</div>`,
-				frappe.app
+				frappe.admin
 			)
 		);
 

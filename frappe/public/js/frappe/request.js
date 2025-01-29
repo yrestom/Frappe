@@ -133,10 +133,10 @@ frappe.request.call = function (opts) {
 			opts.success_callback && opts.success_callback(data, xhr.responseText);
 		},
 		401: function (xhr) {
-			if (frappe.app.session_expired_dialog && frappe.app.session_expired_dialog.display) {
-				frappe.app.redirect_to_login();
+			if (frappe.admin.session_expired_dialog && frappe.admin.session_expired_dialog.display) {
+				frappe.admin.redirect_to_login();
 			} else {
-				frappe.app.handle_session_expired();
+				frappe.admin.handle_session_expired();
 			}
 			opts.error_callback && opts.error_callback();
 		},
@@ -151,7 +151,7 @@ frappe.request.call = function (opts) {
 		403: function (xhr) {
 			if (frappe.session.user === "Guest" && frappe.session.logged_in_user !== "Guest") {
 				// session expired
-				frappe.app.handle_session_expired();
+				frappe.admin.handle_session_expired();
 			} else if (xhr.responseJSON && xhr.responseJSON._error_message) {
 				frappe.msgprint({
 					title: __("Not permitted"),
@@ -433,7 +433,7 @@ frappe.request.cleanup = function (opts, r) {
 			r.session_expired ||
 			(frappe.session.user === "Guest" && frappe.session.logged_in_user !== "Guest")
 		) {
-			frappe.app.handle_session_expired();
+			frappe.admin.handle_session_expired();
 			return;
 		}
 

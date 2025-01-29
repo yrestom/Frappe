@@ -7,9 +7,9 @@
 frappe.start_app = function () {
 	if (!frappe.Application) return;
 	frappe.assets.check();
-	frappe.provide("frappe.app");
+	frappe.provide("frappe.admin");
 	frappe.provide("frappe.desk");
-	frappe.app = new frappe.Application();
+	frappe.admin = new frappe.Application();
 };
 
 $(document).ready(function () {
@@ -369,7 +369,7 @@ frappe.Application = class Application {
 		});
 	}
 	handle_session_expired() {
-		frappe.app.redirect_to_login();
+		frappe.admin.redirect_to_login();
 	}
 	redirect_to_login() {
 		window.location.href = `/login?redirect-to=${encodeURIComponent(

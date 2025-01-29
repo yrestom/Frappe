@@ -187,7 +187,7 @@ frappe.ui.keys.off = function (key, page) {
 frappe.ui.keys.add_shortcut({
 	shortcut: "ctrl+s",
 	action: function (e) {
-		frappe.app.trigger_primary_action();
+		frappe.admin.trigger_primary_action();
 		e.preventDefault();
 		return false;
 	},

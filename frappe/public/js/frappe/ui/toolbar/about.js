@@ -27,7 +27,7 @@ frappe.ui.misc.about = function () {
 					<hr>
 					<p class='text-muted'>${__("&copy; Frappe Technologies Pvt. Ltd. and contributors")} </p>
 					</div>`,
-				frappe.app
+				frappe.admin
 			)
 		);
 

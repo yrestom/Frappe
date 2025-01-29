@@ -11,7 +11,7 @@ frappe.ui.form.on("System Settings", {
 					frappe.sys_defaults[key] = val;
 				});
 				if (frm.re_setup_moment) {
-					frappe.app.setup_moment();
+					frappe.admin.setup_moment();
 					delete frm.re_setup_moment;
 				}
 			},
